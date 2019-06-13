@@ -1,0 +1,23 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mocha Tests</title>
+    <link href="https://unpkg.com/mocha/mocha.css" rel="stylesheet" />
+	<script src="https://unpkg.com/mocha/mocha.js"></script>
+	<script src="https://unpkg.com/chai/chai.js"></script>
+	<script>mocha.setup('bdd')</script>
+</head>
+<body>
+	<div id="container"></div>
+	<div id="mocha"></div>
+</body>
+<script src="solution.js"></script>
+<script src="solution.test.js"></script>
+<script>
+	let getDiv = document.getElementById("container");
+	getDiv.innerHTML =
+	"<p>Problem: <a href=" + problemLink + ">"+ problemLink + "</a></p>" + "<p>Submission: <a href=" + submissionLink + ">"+ submissionLink + "</a></p>";
+    mocha.checkLeaks();
+    mocha.run();
+</script>
+</html>
